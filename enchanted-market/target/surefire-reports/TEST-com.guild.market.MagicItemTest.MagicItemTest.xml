@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.guild.market.MagicItemTest.MagicItemTest" time="0.029" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.guild.market.MagicItemTest.MagicItemTest" time="0.04" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\CHINSH~1\AppData\Local\Temp\surefire13472564891531799730\surefirebooter18310089691038316526.jar C:\Users\Chin Shi Er\AppData\Local\Temp\surefire13472564891531799730 2026-01-01T23-43-34_593-jvmRun1 surefire15690223712453074178tmp surefire_017441539896422568362tmp"/>
+    <property name="sun.java.command" value="C:\Users\CHINSH~1\AppData\Local\Temp\surefire11697470009890862216\surefirebooter5168708923024605456.jar C:\Users\Chin Shi Er\AppData\Local\Temp\surefire11697470009890862216 2026-01-02T00-04-19_900-jvmRun1 surefire16372339699826836691tmp surefire_0655821957996601538tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Chin Shi Er\OneDrive\Documents\Coding\VIVA3-FOP\enchanted-market\target\test-classes;C:\Users\Chin Shi Er\OneDrive\Documents\Coding\VIVA3-FOP\enchanted-market\target\classes;C:\Users\Chin Shi Er\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Chin Shi Er\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\CHINSH~1\AppData\Local\Temp\surefire13472564891531799730\surefirebooter18310089691038316526.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\CHINSH~1\AppData\Local\Temp\surefire11697470009890862216\surefirebooter5168708923024605456.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS"/>
@@ -60,10 +60,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="incrementCount_with_no_arguments" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0.003"/>
+  <testcase name="incrementCount_with_no_arguments" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0.004"/>
   <testcase name="calculateTotal_with_zero" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0"/>
   <testcase name="getItemCount_with_multiple_items" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0"/>
-  <testcase name="calculateTotal_with_Tax" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0"/>
+  <testcase name="calculateTotal_with_Tax" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0.001"/>
   <testcase name="incrementCount_with_parameters" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0"/>
   <testcase name="setMagicPrice_with_Neg_value" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0"/>
   <testcase name="setMagicPrice" classname="com.guild.market.MagicItemTest.MagicItemTest" time="0"/>

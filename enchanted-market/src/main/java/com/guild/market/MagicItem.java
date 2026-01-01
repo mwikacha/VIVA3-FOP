@@ -1,8 +1,10 @@
 package com.guild.market;
+/*instance variable double(primitive type) cannot be null, so I add boolean helper isMagicPriceSet
+using Double.isNaN(since Double is an object wrapper*/
 public class MagicItem {
     //instance variables
     private String name;
-    private Double magicPrice;
+    private double magicPrice;
 
     //static variables
     private static final double MAGIC_TAX_RATE = 0.13;
@@ -11,7 +13,7 @@ public class MagicItem {
     //no argument constructor
     public MagicItem() {
         this.name = "Unnamed Magic Item";
-        this.magicPrice = null;
+        this.magicPrice = Double.NaN; //to indicate not set
         itemCount++;
     }
 
@@ -31,8 +33,7 @@ public class MagicItem {
     }
 
     //getMagicPrice method
-    public Double getMagicPrice() {
-        
+    public double getMagicPrice() {
         return magicPrice;
     }
 
@@ -52,6 +53,10 @@ public class MagicItem {
     public static double calculateTotal(double magicPrice, int quantity) {
         double totalPricewithTax = magicPrice * quantity * (1 + MAGIC_TAX_RATE);
         return totalPricewithTax;
+    }
+
+    public boolean isMagicPriceSet() {
+        return !Double.isNaN(magicPrice);
     }
 }
 

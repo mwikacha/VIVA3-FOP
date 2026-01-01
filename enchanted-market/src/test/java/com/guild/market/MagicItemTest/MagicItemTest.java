@@ -1,9 +1,8 @@
 package com.guild.market.MagicItemTest;
 import com.guild.market.MagicItem;
 
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -25,7 +24,7 @@ public class MagicItemTest
 
         assertEquals("Unnamed Magic Item", item.getName());
 
-        assertNull("Default magicPrice should be null (not set)", item.getMagicPrice());
+        assertTrue("Default magicPrice should be null (not set)", Double.isNaN(item.getMagicPrice()));
 
         assertEquals("Item count should increment by 1", before + 1, MagicItem.getItemCount());
     }
@@ -48,6 +47,7 @@ public class MagicItemTest
         item.setMagicPrice(100.50);
 
         assertEquals(100.50, item.getMagicPrice(), 1e-9);
+        assertTrue(item.isMagicPriceSet());
     }
 
     @Test
