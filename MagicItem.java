@@ -1,5 +1,6 @@
 public class MagicItem {
     //instance variables
+    //set to private for security (encapsulation)
     private String name;
     private Double magicPrice;
 
@@ -18,12 +19,16 @@ public class MagicItem {
     //receives name and magicPrice
     public MagicItem(String name, Double magicPrice) {
         this.name = name;
-        this.magicPrice = magicPrice;
+        setMagicPrice(magicPrice); //use setter to leverage validation
         itemCount++;
     }
 
+    //getter = only read the value
+    //setter = can change the value
+
     //encapsulation methods
     //getter methods
+    //getter only returns the value.
     //getName method
     public String getName() {
         return name;
@@ -31,11 +36,28 @@ public class MagicItem {
 
     //getMagicPrice method
     public Double getMagicPrice() {
-        if (magicPrice < 0){
-            IllegalArgumentException e = new IllegalArgumentException("Price cannot be negative.");
+        return magicPrice;
+    }
+
+    //setter methods
+    //setter validates input to prevent invalid object state.
+    //setName method
+    //if name is changed,it simply assigns the new value, basically changing the name.
+    //item.setName("Health Potion");
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    //setMagicPrice method
+    //same as above, but with validation
+    //can change price, but cannot be negative.
+    public void setMagicPrice(Double magicPrice) {
+        //allow null, only reject negative values
+        if (magicPrice != null && magicPrice < 0) {
+            IllegalArgumentException e = new IllegalArgumentException("Price cannot be negative!");
             throw e;
         }
-        return magicPrice;
+        this.magicPrice = magicPrice;
     }
 
     //static method to get itemCount()
@@ -49,4 +71,7 @@ public class MagicItem {
         return totalPricewithTax;
     }
 }
+
+
+
 
