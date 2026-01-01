@@ -3,6 +3,7 @@ package com.guild.market;
 using Double.isNaN(since Double is an object wrapper*/
 public class MagicItem {
     //instance variables
+    //set to private for security (encapsulation)
     private String name;
     private double magicPrice;
 
@@ -21,12 +22,16 @@ public class MagicItem {
     //receives name and magicPrice
     public MagicItem(String name, Double magicPrice) {
         this.name = name;
-        this.magicPrice = magicPrice;
+        setMagicPrice(magicPrice); //use setter to leverage validation
         itemCount++;
     }
 
+    //getter = only read the value
+    //setter = can change the value
+
     //encapsulation methods
     //getter methods
+    //getter only returns the value.
     //getName method
     public String getName() {
         return name;
@@ -59,4 +64,7 @@ public class MagicItem {
         return !Double.isNaN(magicPrice);
     }
 }
+
+
+
 
