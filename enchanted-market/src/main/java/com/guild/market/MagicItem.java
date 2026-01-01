@@ -1,4 +1,3 @@
-package com.guild.market;
 /*instance variable double(primitive type) cannot be null, so I add boolean helper isMagicPriceSet
 using Double.isNaN(since Double is an object wrapper*/
 public class MagicItem {
