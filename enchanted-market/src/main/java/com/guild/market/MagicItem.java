@@ -1,3 +1,4 @@
+package com.guild.market;
 /*instance variable double(primitive type) cannot be null, so I add boolean helper isMagicPriceSet
 using Double.isNaN(since Double is an object wrapper*/
 public class MagicItem {
@@ -34,7 +35,7 @@ public class MagicItem {
     //5.itemCount is incremented
     public MagicItem(String name, Double magicPrice) {
         this.name = name;
-        setMagicPrice(magicPrice); //use setter to leverage validation before setting value
+        this.magicPrice =(magicPrice != null) ? magicPrice : Double.NaN;//To avoid nullPointerException which will occur when Double -> double
         itemCount++;
     }
 
@@ -82,6 +83,28 @@ public class MagicItem {
     //if magicPrice is not NaN, then it is set, this will return true, can safely use.
     public boolean isMagicPriceSet() {
         return !Double.isNaN(magicPrice);
+    }
+
+    public static void main(String[] args) {
+        // Sample usage (not part of tests)
+        MagicItem itemA = new MagicItem(); // default, price not set (NaN)
+        System.out.println(itemA.getName());                 // Unnamed Magic Item
+        System.out.println(Double.isNaN(itemA.getMagicPrice())); // true
+        System.out.println(itemA.isMagicPriceSet());         // false
+
+        itemA.setMagicPrice(100.50);
+        System.out.println(itemA.getMagicPrice());           // 100.5
+        System.out.println(itemA.isMagicPriceSet());         // true
+
+        MagicItem itemB = new MagicItem("Emotional Damage Potion", 49.99);
+        System.out.println(itemB.getName());                 // Emotional Damage Potion
+        System.out.println(itemB.getMagicPrice());           // 49.99
+
+        double total = MagicItem.calculateTotal(100.00, 2);
+        System.out.printf("%.2f%n", total);            // 226.0
+
+        System.out.println(MagicItem.getItemCount());        // Depends on how many items created so far
+
     }
 }
 

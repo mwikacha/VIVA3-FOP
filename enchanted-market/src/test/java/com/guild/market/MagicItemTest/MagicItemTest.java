@@ -83,5 +83,6 @@ public class MagicItemTest
         new MagicItem("Flying Broomstick", 200.00);
 
         assertEquals(before + 3, MagicItem.getItemCount());
+        
     }
 }
