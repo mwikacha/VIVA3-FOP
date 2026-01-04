@@ -21,7 +21,8 @@ public class MagicItem {
     //receives name and magicPrice
     public MagicItem(String name, Double magicPrice) {
         this.name = name;
-        this.magicPrice = magicPrice;
+        /*Double to a double, Java unboxes the object to the primitive. If the argument is null, unboxing throws NullPointerException. */
+        this.magicPrice = (magicPrice == null ? Double.NaN : magicPrice.doubleValue()); 
         itemCount++;
     }
 
@@ -57,6 +58,28 @@ public class MagicItem {
 
     public boolean isMagicPriceSet() {
         return !Double.isNaN(magicPrice);
+    }
+
+    public static void main(String[] args) {
+        // Sample usage (not part of tests)
+        MagicItem itemA = new MagicItem(); // default, price not set (NaN)
+        System.out.println(itemA.getName());                 // Unnamed Magic Item
+        System.out.println(Double.isNaN(itemA.getMagicPrice())); // true
+        System.out.println(itemA.isMagicPriceSet());         // false
+
+        itemA.setMagicPrice(100.50);
+        System.out.println(itemA.getMagicPrice());           // 100.5
+        System.out.println(itemA.isMagicPriceSet());         // true
+
+        MagicItem itemB = new MagicItem("Emotional Damage Potion", 49.99);
+        System.out.println(itemB.getName());                 // Emotional Damage Potion
+        System.out.println(itemB.getMagicPrice());           // 49.99
+
+        double total = MagicItem.calculateTotal(100.00, 2);
+        System.out.printf("%.2f%n", total);            // 226.0
+
+        System.out.println(MagicItem.getItemCount());        // Depends on how many items created so far
+
     }
 }
 
