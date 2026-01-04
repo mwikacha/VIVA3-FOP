@@ -34,7 +34,7 @@ public class MagicItem {
     //5.itemCount is incremented
     public MagicItem(String name, Double magicPrice) {
         this.name = name;
-        this.magicPrice = magicPrice;
+        this.magicPrice =(magicPrice != null) ? magicPrice : Double.NaN;//To avoid nullPointerException which will occur when Double -> double
         itemCount++;
     }
 
